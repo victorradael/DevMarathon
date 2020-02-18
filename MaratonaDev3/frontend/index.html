@@ -6,13 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Salve Vidas! Doe Sangue</title>
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/style.css">
 
 <body>
     <header>
         <img 
             class="logo"
-            src="logo.png" 
+            src="/logo.png" 
             alt="DOE"
         >
         <h2>A sua doação importa</h2>
@@ -23,7 +23,7 @@
     </header>
     <section class="form hide">
         <h2>Entre na Lista de Doadores</h2>
-        <form action="/">
+        <form action="/" method="POST">
             <input 
                 type="text" 
                 name="name" 
@@ -46,30 +46,19 @@
         <h2>Últimos <span>Doadores</span></h2>
 
         <section class="donors">
-            <div class="donor">
-                <div class="blood">AB+</div>
-                <p>Victor Radael</p>
-            </div>
+
+            {% for donor in donors %}
 
             <div class="donor">
-                <div class="blood">AB+</div>
-                <p>Victor Radael</p>
+                <div class="blood">{{donor.blood}}</div>
+                <p>{{donor.name}}</p>
             </div>
 
-            <div class="donor">
-                <div class="blood">AB+</div>
-                <p>Victor Radael</p>
-            </div>
-
-            <div class="donor">
-                <div class="blood">AB+</div>
-                <p>Victor Radael</p>
-            </div>
-
+            {%endfor%}
         </section>
     </main>
     <footer>Com ❤ @victorradael.</footer>
-    <script src="scripts.js"></script>
+    <script src="/scripts.js"></script>
 </body>
 
 </html>
